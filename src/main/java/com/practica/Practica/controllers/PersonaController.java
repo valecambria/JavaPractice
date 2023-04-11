@@ -1,7 +1,7 @@
 package com.practica.Practica.controllers;
 
 import com.practica.Practica.entities.Persona;
-import com.practica.Practica.services.PersonaService;
+import com.practica.Practica.services.PersonaServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin(origins = "*") //desde cualquier origen voy a poder acceder a los datos de mi API
 @RequestMapping(path="api/v1/personas")
 public class PersonaController {
-    private PersonaService personaService;
+    private PersonaServiceImpl personaService;
 
-    public PersonaController(PersonaService personaService) {
+    public PersonaController(PersonaServiceImpl personaService) {
         this.personaService = personaService;
     }
 
