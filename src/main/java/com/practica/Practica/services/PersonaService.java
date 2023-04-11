@@ -4,8 +4,9 @@ import com.practica.Practica.entities.Persona;
 import com.practica.Practica.repositories.PersonaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -54,7 +55,7 @@ public class PersonaService implements BaseService<Persona>{
         try {
             Optional<Persona> entityOptional = personaRepository.findById(id);
             Persona persona = entityOptional.get();
-            persona = personaRepository.save(persona);
+            persona = personaRepository.save(entity);
             return persona;
         }catch (Exception e){
             throw new Exception(e.getMessage());
